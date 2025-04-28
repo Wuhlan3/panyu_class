@@ -100,6 +100,13 @@
 <body>
     <div id="map-container">
         <img id="map" src="https://th.bing.com/th/id/R.1f4e34f6c1a2a302c119b54d8fa70978?rik=Q8gG%2b1TdQqz8Pg&riu=http%3a%2f%2fwww.bigemap.com%2fmap_source%2fterrain%2fsmall%2f2257.png&ehk=P6ym8g5eUnQvlhfYqljuwTaIWBNihTj%2fdmxJ2Q%2f0Css%3d&risl=&pid=ImgRaw&r=0" alt="番禺区地图">
+        <script>
+            const img = document.getElementById('map');
+            img.onerror = function () {
+                // 这里的备用链接你可以替换为实际可用的图片链接
+                this.src = "img/R.png";
+            };
+        </script>
         <button class="numbered-button" id="btn1" onclick="showText('text1')" data-tooltip="废水污染问题" style="top: 50%; left: 55%;">3</button>
         <button class="triangle-button" id="triangle1" onclick="showText('text12')" style="top: 55%; left: 60%;"></button>
         <div class="tooltip" id="tooltip1"></div>
