@@ -33,10 +33,14 @@
             display: none;
             position: absolute;
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 1rem;
-            border-radius: 0.5rem;
+            /* 修改 padding，使其根据缩放比例调整 */
+            padding: calc(var(--scale-factor) * 1rem);
+            /* 修改 border - radius，使其根据缩放比例调整 */
+            border-radius: calc(var(--scale-factor) * 0.5rem);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             z-index: 999;
+            /* 修改字体大小，使其根据缩放比例调整 */
+            font-size: calc(var(--scale-factor) * 16px);
         }
 
         button.numbered-button {
@@ -81,12 +85,14 @@
             position: absolute;
             background-color: rgba(0, 0, 0, 0.7);
             color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
+            /* 修改内边距，使其根据缩放比例调整 */
+            padding: calc(var(--scale-factor) * 5px) calc(var(--scale-factor) * 10px);
+            /* 修改边框圆角，使其根据缩放比例调整 */
+            border-radius: calc(var(--scale-factor) * 5px);
             display: none;
             z-index: 1;
-            font-size: 14px;
-            z-index: 997;
+            /* 修改字体大小，使其根据缩放比例调整 */
+            font-size: calc(var(--scale-factor) * 14px);
         }
     </style>
 </head>
