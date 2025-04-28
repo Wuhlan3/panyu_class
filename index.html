@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>番禺区地图交互页面</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #map-container {
+            position: relative;
+            max-width: 100%;
+            max-height: 100vh;
+        }
+
+        #map {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .text-panel {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        button {
+            position: absolute;
+            background-color: red;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button:hover {
+            transform: scale(1.2);
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map-container">
+        <img id="map" src="https://th.bing.com/th/id/R.1f4e34f6c1a2a302c119b54d8fa70978?rik=Q8gG%2b1TdQqz8Pg&riu=http%3a%2f%2fwww.bigemap.com%2fmap_source%2fterrain%2fsmall%2f2257.png&ehk=P6ym8g5eUnQvlhfYqljuwTaIWBNihTj%2fdmxJ2Q%2f0Css%3d&risl=&pid=ImgRaw&r=0" alt="番禺区地图">
+        <button id="btn1" onclick="showText('text1')" data-tooltip="大石" style="top: 27%; left: 18%;">1</button>
+        <div class="tooltip" id="tooltip1"></div>
+        <div id="text1" class="text-panel" style="top: 20%; left: 25%;">大石街加强建筑工地夜间超时施工管理
+            对夜间无证超时施工行为
+            坚决叫停
+            本报讯 (融媒体记者袁辉 通	落实夜间日常巡查责任工作。	
+            讯员植洁瑜)今年10月以来,大石街	街加强对辖区建筑工地的夜间超时方	
+            积极加强辖区建筑工地夜间超时施	工巡查整治力度,每晚安排执法人员对	
+            工管理,开展建筑工地夜间专项巡查	在建工地进行监管,重点加强对南大路	
+            行动5次，检查辖区在建建筑工地	各标段工地及长隆地块内多个越秀地	
+            125个,发出责令整改通知书1份,约	产工地的巡查,及时处理市民反映夜间	
+            谈建筑工地负责人2人(次)。	超时施工问题,维护和谐的生活环境。	
+            加强在建工地宣传教育工作。	开展夜间工地专项执法行动	
+            该街严格监督辖区各建设、施工单位	进一步加强辖区在建工程夜间无证	
+            落实各项工作措施和责任，切实做好	超时施工的执法检查力度,同时结合	
+            文明施工管理工作,严禁无证夜间超	每周夜间专项行动对存在问题的工	
+            时施工行为。因施工要求确需在夜	地开展“回头看”,对存在夜间无证起	
+            间连续施工作业的,须有建设行政主	时施工的行为坚决叫停，及时对相关	
+            管部门出具的证明,并做好对附近居	负责人进行约谈,对拒不改正的一	
+            民告示工作。	依法处理。</div>
+        <button id="btn2" onclick="showText('text2')" data-tooltip="大学城" style="top: 18%; left: 45%;">2</button>
+        <div class="tooltip" id="tooltip2"></div>
+        <div id="text2" class="text-panel" style="top: 20%; left: 45%;">这里是按钮 2 点击后展示的文字内容。</div>
+        <button id="btn3" onclick="showText('text3')" data-tooltip="化龙" style="top: 20%; left: 60%;">3</button>
+        <div class="tooltip" id="tooltip3"></div>
+        <div id="text3" class="text-panel" style="top: 20%; left: 65%;">这里是按钮 3 点击后展示的文字内容。</div>
+        <button id="btn4" onclick="showText('text4')" data-tooltip="钟村" style="top: 48%; left: 20%;">4</button>
+        <div class="tooltip" id="tooltip4"></div>
+        <div id="text4" class="text-panel" style="top: 50%; left: 25%;">让河面更干净清洁
+            钟村街组织开展水面漂浮物清理专项行动
+            本报讯 (融媒体记者蒋蕾蕾通讯员李玉仪)近日,钟村街城市管理办(爱卫)在诜敦河开展水面漂浮物清理专项行动。本次行动共清理河面垃圾1.42吨、清理卫生死角3处。钟村街城市管理办(爱卫)负责人要求,一是常态化做好水面漂浮物日常清理工作。将水面漂浮物清理打捞工作纳人日常管理,落实专门队伍负责水面日常清漂,建立河涌保洁长效机制。一旦发现水面漂浮垃圾，立即组织清理，确保不留死角和盲点。二是加强水域作业人员安全管理,定期检查船只和设备设施,定期开展安全作业培训,检查作业人员作业时是否穿着救生衣,杜绝安全事故发生。三是全面统筹做好街内各条河涌的整治工作汇总,针对存在问题及时作出整改。</div>
+        <button id="btn5" onclick="showText('text5')" data-tooltip="番禺" style="top: 66%; left: 40%;">5</button>
+        <div class="tooltip" id="tooltip5"></div>
+        <div id="text5" class="text-panel" style="top: 50%; left: 45%;">这里是按钮 5 点击后展示的文字内容。</div>
+        <button id="btn6" onclick="showText('text6')" data-tooltip="石楼" style="top: 44%; left: 73%;">6</button>
+        <div class="tooltip" id="tooltip6"></div>
+        <div id="text6" class="text-panel" style="top: 50%; left: 65%;">这里是按钮 6 点击后展示的文字内容。</div>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach((button, index) => {
+            const tooltip = document.getElementById(`tooltip${index + 1}`);
+            button.addEventListener('mouseover', () => {
+                const tooltipText = button.getAttribute('data-tooltip');
+                tooltip.textContent = tooltipText;
+                tooltip.style.display = 'block';
+                tooltip.style.left = `${button.offsetLeft + 25}px`;
+                tooltip.style.top = `${button.offsetTop - 5}px`;
+            });
+            button.addEventListener('mouseout', () => {
+                tooltip.style.display = 'none';
+            });
+        });
+
+        function showText(id) {
+            const textPanel = document.getElementById(id);
+            textPanel.style.display = textPanel.style.display === 'block'? 'none' : 'block';
+        }
+    </script>
+</body>
+
+</html>    
