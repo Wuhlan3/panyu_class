@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>番禺区地图交互页面</title>
+    <title>番禺区环境问题交互界面</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <style>
@@ -94,7 +94,7 @@
 <body>
     <div id="map-container">
         <img id="map" src="https://th.bing.com/th/id/R.1f4e34f6c1a2a302c119b54d8fa70978?rik=Q8gG%2b1TdQqz8Pg&riu=http%3a%2f%2fwww.bigemap.com%2fmap_source%2fterrain%2fsmall%2f2257.png&ehk=P6ym8g5eUnQvlhfYqljuwTaIWBNihTj%2fdmxJ2Q%2f0Css%3d&risl=&pid=ImgRaw&r=0" alt="番禺区地图">
-        <button class="numbered-button" id="btn1" onclick="showText('text1')" data-tooltip="问题3" style="top: 50%; left: 55%;">3</button>
+        <button class="numbered-button" id="btn1" onclick="showText('text1')" data-tooltip="废水污染问题" style="top: 50%; left: 55%;">3</button>
         <button class="triangle-button" id="triangle1" onclick="showText('text12')" style="top: 55%; left: 60%;"></button>
         <div class="tooltip" id="tooltip1"></div>
         <div id="text1" class="text-panel" style="top: 55%; left: 55%;">广州市生态环境局番禺分局执法人员对大龙街茶东村东兴路11号的广东日美食品有限公司进行现场检查，该厂正常生产，生产废水污染治理设施正常运行，但生产废水处理后排放口排放的废水中，五日生化需氧量343mg/L、化学需氧量1.09×10³mg/L、悬浮物936mg/L，超过广东省地方标准《水污染物排放限值》（DB44/26 - 2001）第二类污染物最高允许排放浓度第二时段三级标准。</div>
@@ -109,27 +109,36 @@
             7. 加强与环保部门沟通。</br>
             8. 定期监测和评估。</br>
         </div>
-        <button class="numbered-button" id="btn2" onclick="showText('text2')" data-tooltip="这是标记点 2" style="top: 15%; left: 40%;">2</button>
+        <button class="numbered-button" id="btn2" onclick="showText('text2')" data-tooltip="大气污染问题" style="top: 15%; left: 40%;">5</button>
         <button class="triangle-button" id="triangle2" onclick="showText('text22')" style="top: 16%; left: 44%;"></button>
         <div class="tooltip" id="tooltip2"></div>
-        <div id="text2" class="text-panel" style="top: 20%; left: 45%;">番禺区市桥街德胜路70号商铺进行外立面改造工程，虽采取围蔽措施，但防尘措施不足，建筑垃圾未及时清理，扬尘影响附近居民生活。</div>
+        <div id="text2" class="text-panel" style="top: 20%; left: 45%;">大学城外环西路南亭村段：2024年2月起，有市民反映外环西路从广东工业大学到广州美术学院途经南亭村路段存在异味问题，发现沿江周边存在村民焚烧落叶、塑料袋的行为，产生烧焦气味；路边下水井盖孔洞有臭味逸散，天气炎热时味道刺鼻。</div>
         <div id="text22" class="text-panel" style="top: 20%; left: 45%;">
             tips：</br>
-            1. 增加降尘设备。</br>
-            2. 优化围挡设施。</br>
-            3. 及时清理建筑垃圾。</br>
-            4. 加强物料管理。</br>
-            5. 定期清扫和洒水。</br>
-            6. 设置车辆清洗设施。</br>
-            7. 加强人员培训和管理。</br>
-            8. 接受公众监督。</br>
+            1. 加强巡逻监管。</br>
+            2. 环保宣传教育。</br>
+            3. 优化垃圾处理。</br>
+            4. 下水系统维护。</br>
+            5. 安装监控设备。</br>
+            6. 部门联合治理。</br>
+            7. 公众参与监督。</br>
+            8. 生态修复与绿化。</br>
         </div>
-        <button class="numbered-button" id="btn3" onclick="showText('text3')" data-tooltip="这是标记点 3" style="top: 15%; left: 60%;">3</button>
-        <button class="triangle-button" id="triangle3" onclick="showText('text32')" style="top: 16%; left: 64%;"></button>
+        <button class="numbered-button" id="btn3" onclick="showText('text3')" data-tooltip="土壤污染问题" style="top: 67%; left: 20%;">6</button>
+        <button class="triangle-button" id="triangle3" onclick="showText('text32')" style="top: 73%; left: 20%;"></button>
         <div class="tooltip" id="tooltip3"></div>
-        <div id="text3" class="text-panel" style="top: 20%; left: 65%;">这里是按钮 3 点击后展示的文字内容。</div>
-        <div id="text32" class="text-panel" style="top: 20%; left: 65%;">这里是按钮 3 点击后展示的文字内容。</div>
-        <button class="numbered-button" id="btn4" onclick="showText('text4')" data-tooltip="这是标记点 4" style="top: 40%; left: 20%;">4</button>
+        <div id="text3" class="text-panel" style="top: 72%; left: 25%;">沙头街北海村“散乱污”废品堆放场所：2024年8月1日，沙头街综合行政执法队组织有关部门对北海村北堤街的“散乱污”废品堆放场所开展整治行动。该范围内有5处大型垃圾废品堆放场，卫生环境条件差且存在极大安全隐患，经多次责令整改仍拒不清理。</div>
+        <div id="text32" class="text-panel" style="top: 78%; left: 20%;">
+            tips：</br>
+            1. 加强监管执法力度。 </br>
+            2. 完善基础设施。</br>
+            3. 开展联合整治。</br>
+            4. 加强宣传教育。</br>
+            5. 鼓励公众参与。</br>
+            6. 进行环境修复。</br>
+            7. 建立长效管理机制。</br>
+        </div>
+        <button class="numbered-button" id="btn4" onclick="showText('text4')" data-tooltip="水面漂浮物问题" style="top: 40%; left: 20%;">4</button>
         <button class="triangle-button" id="triangle4" onclick="showText('text42')" style="top: 41%; left: 24%;"></button>
         <div class="tooltip" id="tooltip4"></div>
         <div id="text4" class="text-panel" style="top: 45%; left: 25%;">钟村街城市管理办在诜敦河开展水面漂浮物清理专项行动。本次行动共清理河面垃圾1.42吨、清理卫生死角3处。</div>
@@ -146,7 +155,7 @@
             9. 生态修复与绿化。</br>
             10. 公众参与监督。</br>
         </div>
-        <button class="numbered-button" id="btn5" onclick="showText('text5')" data-tooltip="问题2" style="top: 60%; left: 30%;">2</button>
+        <button class="numbered-button" id="btn5" onclick="showText('text5')" data-tooltip="施工扬尘问题" style="top: 60%; left: 30%;">2</button>
         <button class="triangle-button" id="triangle5" onclick="showText('text52')" style="top: 65%; left: 35%;"></button>
         <div class="tooltip" id="tooltip5"></div>
         <div id="text5" class="text-panel" style="top: 65%; left: 30%;">番禺区市桥街德胜路70号商铺进行外立面改造工程，虽采取围蔽措施，但防尘措施不足，建筑垃圾未及时清理，扬尘影响附近居民生活。</div>
@@ -161,7 +170,7 @@
             7. 加强人员培训和管理。</br>
             8. 接受公众监督。</br>
         </div>
-        <button class="numbered-button" id="btn6" onclick="showText('text6')" data-tooltip="问题1" style="top: 53%; left: 72%;">1</button>
+        <button class="numbered-button" id="btn6" onclick="showText('text6')" data-tooltip="噪音扰民问题" style="top: 53%; left: 72%;">1</button>
         <button class="triangle-button" id="triangle6" onclick="showText('text62')" style="top: 52%; left: 77%;"></button>
         <div class="tooltip" id="tooltip6"></div>
         <div id="text6" class="text-panel" style="top: 58%; left: 72%;">广州市番禺区石楼夜遇饮品店存在营业性文化娱乐场所的边界噪声超过噪声排放标准排放社会生活噪声的违法行为，该店大厅音响对应西界外1米处夜间噪声监测结果超标6分贝。</div>
